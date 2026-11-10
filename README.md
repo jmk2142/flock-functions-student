@@ -233,6 +233,16 @@ Pick one capability from the [API reference](#api-reference) that interests you.
 
 Choose an effect you want, work out the inputs, try a small call or code change, and compare what happens with what you expected. You might then combine two capabilities into an action of your own. In guided exploration, Codex should help you participate in those decisions before and during implementation, rather than simply deliver a finished feature. You can still ask for a demonstration or direct help at any time.
 
+## Make one addition of your own
+
+**What's one thing you want this application to do?** Work with Codex to design a function for your idea, then bring it to life in your copy.
+
+You can start with:
+
+> I want this app to [your idea]. Help me think through a function for it before implementing it. Let's work out what it needs, what it should do or return, what we can reuse, and what it should leave unchanged. Guide me one decision at a time, then help me build and try our design.
+
+A small addition is enough. You can describe it in everyday language; you do not need to know the syntax first. Try the result, compare it with what you meant, and make a revision if needed. Bring one interesting design decision or surprise back to the class discussion. Guided help remains optional, and you can request direct help at any time.
+
 ## Project files
 
 | File | What it is for |
