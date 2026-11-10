@@ -263,6 +263,8 @@ During class, you can simply tell Codex where you are: **“I'm on 02—we just 
 
 Guided help can take different forms. Ask to see and explain a short piece of code, try a simpler example, connect the concept to an experience you know, check your understanding, or take on a small challenge. Codex should adapt to your questions and what you demonstrate, rather than follow a rigid quiz. You can request a worked example or direct help whenever you need it.
 
+You can also bring an interest of your own: a game, music, a classroom activity, a daily routine, or something you want to make. Ask Codex to help turn one small action from that context into a beginner-friendly example. Together you can decide what information it needs, what should stay fixed, what it should change or return, and what should remain outside its responsibility. You do not have to stay with the birds to explore functions.
+
 A starting prompt:
 
 > Read this repository's README.md and AGENTS.md. I am exploring the student studio, not the instructor walkthrough. Find releaseBirds in functions.js and its callers in controls.js. Explain what input it needs, where the count is used, and what it changes. Show actual file locations. Do not modify code yet. Offer me the choice of guided exploration or direct help.
