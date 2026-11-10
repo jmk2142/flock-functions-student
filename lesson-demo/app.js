@@ -36,3 +36,15 @@ $('#preview').onclick=()=>{const p=stage===3?profiles[$('#profile').value]:fixed
 $('#sound').onclick=()=>{sound=!sound;$('#sound').textContent=sound?'♫ Sound on':'Sound off · enable';$('#sound').setAttribute('aria-pressed',sound);if(sound){audio ||=new(window.AudioContext||window.webkitAudioContext)();audio.resume()}};
 $('#reset').onclick=reset;$('#next').onclick=()=>{stage++;render()};$('#back').onclick=()=>{stage--;render()};$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText($('#prompt').value);$('#copy').textContent='Copied';setTimeout(()=>$('#copy').textContent='Copy prompt',1500)}catch{$('#prompt').select();$('#copy').textContent='Select and copy the prompt'}};
 size();reset();render();animate();
+
+// Setup is separate from the optional learning prompts.
+const clonePrompt = "Codex, clone https://github.com/jmk2142/flock-functions-student so we can work with this demo. If we already have a local copy, use it and preserve my changes. Read README.md and AGENTS.md. Then run the student studio (the root index.html) for me in the Codex browser. Handle the local preview setup and verify that the page loads. Do not change the lesson code yet.";
+const runPrompt = "Codex, run this demo for me in the Codex browser. Use the student studio in this repository's root index.html and preserve my code changes. If this chat does not have the student repository yet, clone https://github.com/jmk2142/flock-functions-student and read README.md and AGENTS.md first. Handle local preview setup and verify the page loads.";
+$('#setup-text').value=clonePrompt;
+async function copySetup(prompt) {
+  $('#setup-text').value=prompt;
+  try { await navigator.clipboard.writeText(prompt); $('#setup-status').textContent=' Copied — paste into Codex.'; }
+  catch { $('#setup-text').closest('details').open=true; $('#setup-text').select(); $('#setup-status').textContent=' Select and copy the prompt below.'; }
+}
+$('#clone-prompt').onclick=()=>copySetup(clonePrompt);
+$('#run-prompt').onclick=()=>copySetup(runPrompt);

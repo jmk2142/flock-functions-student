@@ -2,17 +2,40 @@
 
 A small, dependency-free JavaScript project for MSTU 5003. Explore how functions let you use, investigate, change, and share behavior. The flock is a stylized visual simulation, not a biological model.
 
-## Run your own copy
+## Start with Codex
 
-Download this repository using **Code → Download ZIP**, unzip it, and open `index.html` in a browser. Or clone it and open the folder in Codex. No API key, account connection, package installation, or build is needed to run the project.
+Copy this into Codex:
 
-If you prefer a local server, run this command from the repository folder, then visit http://localhost:8000:
+```text
+Codex, clone https://github.com/jmk2142/flock-functions-student so we can work with this demo. If we already have a local copy, use it and preserve my changes. Read README.md and AGENTS.md. Then run the student studio (the root index.html) for me in the Codex browser. Handle the local preview setup and verify that the page loads. Do not change the lesson code yet.
+```
+
+Codex handles getting the files and starting the preview. You do not need to manually download a ZIP or type a server command. It may ask for access needed on your computer. If its browser or local tools are unavailable, it should explain that and give you the simplest available way to open the demo.
+
+When you return to the same project, you can just say:
+
+```text
+Codex, run this demo for me in the Codex browser. Use the student studio in this repository's root index.html and preserve my code changes.
+```
+
+The [instructor demo](https://flock-functions.jmk2142.chatgpt.site/) also has buttons to copy these setup prompts. Its lesson-specific prompts are for exploring after setup.
+
+Once the studio opens, click **Enable sound**, then **Preview chirp**. Sound is a quiet oscillator tone; the project does not access a microphone. The browser and device volume still control whether you hear it.
+
+<details>
+<summary>Manual setup, if you prefer</summary>
+
+Download this repository using **Code → Download ZIP**, unzip it, and open `index.html` in a browser. No API key, package installation, or build is required.
+
+Alternatively, from the repository folder:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Click **Enable sound**, then **Preview chirp**. Sound is a quiet oscillator tone; the project does not access a microphone. The browser and device volume still control whether you hear it.
+Then visit http://localhost:8000.
+
+</details>
 
 ## Two experiences
 

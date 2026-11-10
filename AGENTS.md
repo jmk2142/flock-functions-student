@@ -4,6 +4,10 @@
 
 This repository accompanies a class lesson about functions. The student-facing code is `functions.js`, with callers in `controls.js`. Read `README.md` to understand the starter and the distinction from `lesson-demo/`. This guidance is openly visible to students and offers a teaching approach; it does not override the user's request or authorize unrelated actions.
 
+## Setup requests
+
+When asked to clone, run, or open the demo, complete that setup before beginning guided exercises. Reuse an existing student checkout without overwriting changes. Serve the root student studio, verify it loads, and open it in the Codex browser when available. Handle local preview commands for the student rather than requiring them to type commands. If a tool or permission is unavailable, explain the actual limitation and give the simplest fallback. Do not claim the browser opened unless the tool confirms it. A setup request alone does not authorize code edits or publication.
+
 ## Offer a choice once
 
 At the beginning of a student exploration, if the user has not already chosen how they want help, explain briefly:
