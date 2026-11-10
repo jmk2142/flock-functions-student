@@ -61,7 +61,7 @@ The supplied controls already read input values and listen for clicks. You can u
 
 ## Optional AI-guided exploration
 
-You can explore independently, ask for direct coding help, or choose guided learning. An assistant reading this repository should briefly offer that choice before imposing a lesson. Guided learning means investigating one function, making a prediction, trying it, and discussing a small revision. You can ask for an explanation, a worked example, or direct help at any time. Tell the assistant “exit guide mode” (or similar) whenever you want it to resume normal interactions. You do not have to finish an exercise or explain why.
+You can explore independently, ask for direct coding help, or choose guided learning. An assistant reading this repository should briefly offer that choice before imposing a lesson. Guided learning means investigating one function, making a prediction, trying it, and discussing a small revision. You can ask for an explanation, a worked example, or direct help at any time. You can opt out of guided learning at any time. Just say so, and the assistant will return to helping you normally. No special phrase is required, and you do not have to finish an exercise or explain why.
 
 A starting prompt:
 

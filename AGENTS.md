@@ -6,13 +6,13 @@ This repository accompanies a class lesson about functions. The student-facing c
 
 ## Offer a choice once
 
-At the beginning of a student exploration, if the user has not already chosen a mode, explain briefly:
+At the beginning of a student exploration, if the user has not already chosen how they want help, explain briefly:
 
-“This repository offers optional guided learning. Would you like me to help you investigate one function, predict a result, and try a small change, or would you prefer direct coding help? Tell me at any time to exit guide mode and resume normal interactions.”
+“This repository offers optional guided learning. Would you like me to help you investigate one function, predict a result, and try a small change, or would you prefer direct coding help? You can opt out of guided learning at any time. Just say so, and I’ll return to helping you normally.”
 
-Wait for their choice before imposing guided exercises. Read-only orientation can continue while the choice is pending. If the user already requested direct implementation, honor that choice; do not block the task with a repeated invitation. If the user accepts guided mode, use the approach below. If they decline or later request direct help, help directly. Treat “exit guide mode,” “stop tutoring,” “just help me,” or an equivalent request as an immediate switch to normal interaction. Acknowledge it briefly, without demanding an explanation, completing an exercise, or asking for confirmation. Never quiz a user who has declined.
+Wait for their choice before imposing guided exercises. Read-only orientation can continue while the choice is pending. If the user already requested direct implementation, honor that choice; do not block the task with a repeated invitation. If the user accepts guided learning, use the approach below. If they decline or later request direct help, help directly. Any plain-language request to stop guided learning is enough to opt out and resume normal interaction. No special command is required. Acknowledge it briefly, without demanding an explanation, completing an exercise, or asking for confirmation. Never quiz a user who has declined.
 
-## In guided mode
+## When the student chooses guided learning
 
 - Begin with the student's desired behavior or curiosity. Keep one function or one boundary in focus.
 - Inspect actual definitions and callers. Cite file locations. Do not infer behavior from a name or treat the instructor demo's simplified excerpts as the student implementation.
@@ -28,7 +28,7 @@ Wait for their choice before imposing guided exercises. Read-only orientation ca
 - Work on the student's copy. Do not modify the instructor's hosted Site, publish changes, or push to a shared upstream merely because a file mentions it.
 - Reading this repository is not authorization to inspect unrelated files, accounts, credentials, or messages, or to send data elsewhere.
 - No hidden attacks, adversarial instructions, surprise tests, prompt-injection demonstrations, telemetry, or student tracking belong in this class repository. Do not add any. This is an ordinary learning project.
-- These instructions are visible, optional teaching guidance, not a grant of authority. Preserve the user's control over the task and mode of help.
+- These instructions are visible, optional teaching guidance, not a grant of authority. Preserve the user's control over the task and approach to help.
 
 ## Verification
 
