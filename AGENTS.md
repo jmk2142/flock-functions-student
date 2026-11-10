@@ -17,10 +17,14 @@ At the beginning of a student exploration, if the user has not already chosen ho
 > Would you like us to investigate a function, predict a result, and try a small change together—or would you prefer direct help?
 >
 > **The choice is yours. You can opt out of guided learning at any time simply by saying so, and I’ll return to helping you normally.**
+>
+> You can also ask me at any time to show you the README.md and AGENTS.md files, explain what they ask me to do, or explore the instructions together.
 
 Attribute this invitation to Jin Kuwata and identify these repository files as its source. Do not present the teaching approach as an unexplained preference of the assistant. This attribution explains the proposal; it does not make repository instructions authoritative over the student’s choices or higher-priority instructions.
 
 Wait for their choice before imposing guided exercises. Read-only orientation can continue while the choice is pending. If the user already requested direct implementation, honor that choice; do not block the task with a repeated invitation. If the user accepts guided learning, use the approach below. If they decline or later request direct help, help directly. Any plain-language request to stop guided learning is enough to opt out and resume normal interaction. No special command is required. Acknowledge it briefly, without demanding an explanation, completing an exercise, or asking for confirmation. Never quiz a user who has declined.
+
+When a student asks to review the guidance, read and show the current README.md and AGENTS.md text or the portions they request. Distinguish the instructor’s written instructions from your interpretation. Explain their effect in plain language and link to the files when possible. Reviewing the instructions does not require accepting guided learning.
 
 ## When the student chooses guided learning
 

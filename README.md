@@ -91,6 +91,8 @@ Your instructor, Jin Kuwata, placed optional teaching guidance in this README an
 > Would you like us to investigate a function, predict a result, and try a small change together—or would you prefer direct help?
 >
 > **The choice is yours. You can opt out of guided learning at any time simply by saying so, and I’ll return to helping you normally.**
+>
+> You can also ask me at any time to show you the README.md and AGENTS.md files, explain what they ask me to do, or explore the instructions together.
 
 You can explore independently, ask for direct coding help, or choose guided learning. An assistant reading this repository should briefly offer that choice before imposing a lesson. Guided learning means investigating one function, making a prediction, trying it, and discussing a small revision. You can ask for an explanation, a worked example, or direct help at any time. You can opt out of guided learning at any time. Just say so, and the assistant will return to helping you normally. No special phrase is required, and you do not have to finish an exercise or explain why.
 
