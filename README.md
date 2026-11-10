@@ -261,6 +261,8 @@ You can explore independently, ask for direct coding help, or choose guided lear
 
 During class, you can simply tell Codex where you are: **“I'm on 02—we just added sound to a shared action.”** If you have chosen guided exploration, it can use the instructor's lesson map in AGENTS.md to suggest one relevant thing to predict, inspect, or try in your copy. You do not need to paste the setup prompt again. Your current code may differ from the instructor walkthrough; Codex should check it before suggesting changes.
 
+Guided help can take different forms. Ask to see and explain a short piece of code, try a simpler example, connect the concept to an experience you know, check your understanding, or take on a small challenge. Codex should adapt to your questions and what you demonstrate, rather than follow a rigid quiz. You can request a worked example or direct help whenever you need it.
+
 A starting prompt:
 
 > Read this repository's README.md and AGENTS.md. I am exploring the student studio, not the instructor walkthrough. Find releaseBirds in functions.js and its callers in controls.js. Explain what input it needs, where the count is used, and what it changes. Show actual file locations. Do not modify code yet. Offer me the choice of guided exploration or direct help.
