@@ -1,8 +1,16 @@
-# Flock Lab: student studio
+# Flock Lab
 
-A small, dependency-free JavaScript project for MSTU 5003. Explore how functions let you use, investigate, change, and share behavior. The flock is a stylized visual simulation, not a biological model.
+**A small JavaScript library and playground for exploring functions.** Built for MSTU 5003, Flock Lab lets you release birds, shape their movement, change their appearance, and play a tone through a few named actions.
 
-## Start with Codex
+You can use these functions before understanding the animation and audio code underneath. Then open their definitions, change a behavior, or combine existing actions into a function of your own. The flock is a stylized simulation, not a biological model.
+
+- Runs in a modern browser with Canvas and Web Audio support.
+- No packages, build step, API key, or microphone required.
+- Uses plain JavaScript loaded by `index.html`; this is a teaching library within the project, not an npm package.
+
+**Contents:** [Setup](#installation-and-quick-start) · [First calls](#your-first-function-calls) · [API reference](#api-reference) · [Build an action](#build-an-action-of-your-own) · [Project files](#project-files) · [Learning with Codex](#optional-ai-guided-exploration) · [Testing](#testing-your-changes)
+
+## Installation and quick start
 
 Copy this into Codex:
 
@@ -37,6 +45,198 @@ Then visit http://localhost:8000.
 
 </details>
 
+## Your first function calls
+
+Open the student studio and try **Release 5**, **Ask bird count**, and **Preview chirp**. Enable sound before previewing a tone. The buttons call functions such as:
+
+```js
+releaseBirds(5);
+setBirdColor("coral");
+let population = getBirdCount();
+```
+
+These calls belong in the running studio, after its scripts have loaded. You can ask Codex to help you try them in your local copy or connect them to a button. They are not terminal commands. Start by reading [functions.js](functions.js); find existing button calls in [controls.js](controls.js).
+
+The studio starts with 12 birds. If these three lines run once immediately after a reset, the flock grows to 17, its color becomes coral, and `population` receives the number `17`.
+
+## API reference
+
+An **API** is the set of ways other code can interact with a piece of software. Here, it is a small collection of functions.
+
+In `releaseBirds(count)`, `count` is a **parameter**: the name used inside the definition for incoming information. In `releaseBirds(5)`, `5` is an **argument**: the actual value supplied by that call.
+
+Most functions below have an **effect** on the flock or sound. Only `getBirdCount()` returns a useful value in this starter. The others return `undefined`; seeing a bird or hearing a tone is an effect, not a return value.
+
+| What you want to do | Function | Example |
+| --- | --- | --- |
+| Add birds | [`releaseBirds(count)`](#releasebirdscount) | `releaseBirds(5)` |
+| Play the fixed tone | [`playChirp()`](#playchirp) | `playChirp()` |
+| Set horizontal wind | [`setWind(speed)`](#setwindspeed) | `setWind(-2)` |
+| Attract birds toward a point | [`gatherAt(x, y)`](#gatheratx-y) | `gatherAt(50, 30)` |
+| Push birds outward | [`scatterFlock(strength)`](#scatterflockstrength) | `scatterFlock(4)` |
+| Change all birds' color | [`setBirdColor(color)`](#setbirdcolorcolor) | `setBirdColor("coral")` |
+| Read the population | [`getBirdCount()`](#getbirdcount) | `let count = getBirdCount()` |
+
+### `releaseBirds(count)`
+
+Adds birds to the existing flock. Releases are silent in the starter.
+
+- **Input:** `count`, a whole number from `1` to `20`, inclusive.
+- **Effect:** adds that many birds without removing the existing ones.
+- **Returns:** `undefined`.
+- **Limits:** the total population cannot exceed 160. An invalid count or a release exceeding that limit is rejected without adding any birds. The supplied controls show the error.
+
+```js
+releaseBirds(5);
+releaseBirds(5); // Adds another 5: 10 added in total.
+```
+
+**Try asking:** What should happen if we request 20 birds when there are already 150?
+
+### `playChirp()`
+
+Plays one short oscillator tone, using fixed values inside the function.
+
+- **Inputs:** none in the starter.
+- **Effect:** requests a 600 Hz tone lasting 0.15 seconds.
+- **Returns:** `undefined`; it does not return audio or a result to use in another expression.
+- **Leaves unchanged:** the bird population and movement settings.
+- **Before using:** click **Enable sound**. Audio failures appear in the sound-status message. Device volume and browser output still affect what you hear.
+
+```js
+playChirp(); // Preview the sound without releasing birds.
+```
+
+**Explore next:** Which values would you turn into parameters so two callers could request different sounds? The supplied sound helper accepts pitches from 180–1200 Hz and durations from 0.05–0.6 seconds. `playChirp` does not accept those arguments until you change its definition and callers.
+
+### `setWind(speed)`
+
+Sets the horizontal wind affecting the flock.
+
+- **Input:** `speed`, a number from `-5` to `5`, inclusive; decimals are allowed.
+- **Meaning:** negative blows left, positive blows right, and `0` removes the wind contribution. These are simulation values, not physical speed units.
+- **Effect:** replaces the current wind setting. Individual birds still have their own movement.
+- **Returns:** `undefined`.
+- **Leaves unchanged:** the population and attraction point.
+
+```js
+setWind(2);
+setWind(2); // Wind is still 2, not 4.
+setWind(0); // Removes wind; does not freeze the birds.
+```
+
+**Compare:** Why does calling `releaseBirds(5)` twice behave differently from calling `setWind(2)` twice?
+
+### `gatherAt(x, y)`
+
+Sets a point that attracts the birds over time.
+
+- **Inputs:** `x` and `y`, each a number from `0` to `100`, inclusive.
+- **Meaning:** percentages of the sky's width and height. `(0, 0)` is top left; `(50, 50)` is the center. Larger `y` values move downward.
+- **Effect:** replaces the previous attraction point and draws a marker. Birds steer toward it rather than teleporting; wind and other movement still apply.
+- **Returns:** `undefined`.
+- **Leaves unchanged:** bird count, color, and wind.
+
+```js
+gatherAt(50, 50); // Aim toward the center.
+gatherAt(75, 25); // Move the target toward the upper right.
+```
+
+**Try asking:** Which argument would you change to move the target straight down?
+
+### `scatterFlock(strength)`
+
+Clears the attraction point and gives each bird an outward velocity from the center of the sky.
+
+- **Input:** `strength`, a number from `0` to `5`, inclusive.
+- **Effect:** replaces each bird's own velocity with an outward velocity. The animation then continues applying its normal movement rules and speed limit.
+- **Returns:** `undefined`.
+- **Leaves unchanged:** population, color, and wind.
+- **At zero:** clears attraction and sets each bird's own velocity to zero at that instant. Wind and later animation updates can still move them; this is not a pause function.
+
+```js
+scatterFlock(4);
+```
+
+**Try asking:** What would happen if we called `gatherAt(50, 50)` immediately afterward?
+
+### `setBirdColor(color)`
+
+Changes the color used to draw all birds, including birds released later.
+
+- **Input:** `color`, exactly one of the strings `"teal"`, `"coral"`, `"gold"`, or `"violet"`.
+- **Effect:** replaces the shared bird color. Names are case-sensitive.
+- **Returns:** `undefined`.
+- **Leaves unchanged:** population, wind, attraction, and motion.
+
+```js
+setBirdColor("coral");
+```
+
+**Notice:** A string can be valid JavaScript text without being a supported color name for this function.
+
+### `getBirdCount()`
+
+Reads the current number of birds.
+
+- **Inputs:** none. Empty parentheses still mean “call this function.”
+- **Effect:** no change to the flock.
+- **Returns:** the current population as a number.
+
+```js
+let count = getBirdCount();
+if (count < 20) {
+  releaseBirds(5);
+}
+```
+
+**Predict:** What happens when the flock starts with 18 birds? This condition checks the current count; it does not guarantee the result stays below 20.
+
+### Inputs and errors
+
+Use numbers such as `5`, not numeric text such as `"5"`, for numeric parameters. The supplied controls convert slider values to numbers before calling the functions. Out-of-range numbers, missing required inputs, and unsupported color names are rejected by the supplied helpers. Button errors are displayed below the release controls; audio errors appear by the sound controls.
+
+## Build an action of your own
+
+You can compose existing capabilities into a new named action. For example, this definition changes the color and sets a gathering point:
+
+```js
+function gatherForSunset() {
+  setBirdColor("coral");
+  gatherAt(50, 30);
+}
+```
+
+Defining it does not run it. This separate call does:
+
+```js
+gatherForSunset();
+```
+
+The two calls inside run in order. Gathering continues over time; the function does not wait for the birds to reach their destination. This action leaves the population and wind unchanged. Decide whether those boundaries fit your intention.
+
+Another path follows the sound lesson:
+
+1. Compare a silent release with the separate chirp preview.
+2. Decide whether every release should chirp once.
+3. Add `playChirp()` inside `releaseBirds(count)` if that matches your design. Test all three release buttons and check that preview still adds no birds.
+4. Give `playChirp` pitch and duration parameters. Update every caller, including preview.
+5. Choose distinct sounds, predict the result, then listen and revise.
+
+The supplied controls already handle input and clicks. You can use them before studying event listeners. No arrays or objects are needed in these student examples; those structures remain inside the supplied simulation.
+
+## Project files
+
+| File | What it is for |
+| --- | --- |
+| [functions.js](functions.js) | Short function definitions to investigate and edit |
+| [controls.js](controls.js) | Callers: buttons, slider values, and displayed results |
+| [supplied/flock.js](supplied/flock.js) | Animation, flock state, input validation, and drawing |
+| [supplied/sound.js](supplied/sound.js) | Browser audio and the shared tone helper |
+| [index.html](index.html), [style.css](style.css) | Student studio controls and appearance |
+| [AGENTS.md](AGENTS.md) | Instructor-authored, optional guidance for AI assistants |
+| [tests/functions.test.cjs](tests/functions.test.cjs) | Starter checks using stand-ins for the supplied helpers |
+
 ## Two experiences
 
 - **Student studio (`index.html`):** readable functions with a few supplied controls. This is the place to investigate and edit.
@@ -44,43 +244,6 @@ Then visit http://localhost:8000.
 - [Hosted instructor demo](https://flock-functions.jmk2142.chatgpt.site/) (access depends on the instructor's Site sharing settings; the local walkthrough needs no Site access).
 
 The studio and walkthrough are separate implementations. Editing `functions.js` changes the studio, not the walkthrough or hosted instructor Site. Reload the studio after saving edits; this resets the flock.
-
-## Start with one question
-
-What do you want the flock to do? Pick one function, locate its definition and callers, predict a result, and try it.
-
-| Function | Inputs | Effect or return |
-| --- | --- | --- |
-| `releaseBirds(count)` | Whole number, 1–20 | Adds birds; rejects releases exceeding the 160-bird total limit |
-| `playChirp()` | None initially | Plays the fixed tone; does not add birds |
-| `setWind(speed)` | Number, −5 to 5 | Sets horizontal wind; negative means left |
-| `gatherAt(x, y)` | Two numbers, 0–100 | Sets attraction coordinates as percentages; top left is (0, 0) |
-| `scatterFlock(strength)` | Number, 0–5 | Clears attraction and gives birds an outward velocity |
-| `setBirdColor(color)` | `"teal"`, `"coral"`, `"gold"`, or `"violet"` | Changes all birds' color |
-| `getBirdCount()` | None | Returns the population number without changing it |
-
-There are no arrays or objects to manipulate in the student-facing function definitions. The supplied simulation uses those structures internally. You can investigate them later if useful.
-
-## Find your way around
-
-- `functions.js`: start here; short definitions you can change.
-- `controls.js`: find callers and follow values from UI inputs to arguments.
-- `supplied/flock.js`: animation, state, validation, and drawing.
-- `supplied/sound.js`: browser audio setup and the shared tone helper.
-- `index.html` and `style.css`: controls and presentation.
-- `AGENTS.md`: transparent, optional guidance for AI assistants working here.
-- `tests/functions.test.cjs`: checks the initial function boundaries using supplied-helper stand-ins.
-
-## A first extension
-
-1. Try releasing birds. It is silent in the starter.
-2. Try previewing the chirp. The population stays unchanged.
-3. Decide whether every release should chirp once, or whether your design needs something else.
-4. Add a call to `playChirp()` inside `releaseBirds(count)` if that matches your intention. Predict before testing all three buttons.
-5. Make pitch and duration inputs to `playChirp` so different releases can sound different. Update its callers, including preview. Valid pitch is 180–1200 Hz and duration is 0.05–0.6 seconds.
-6. Combine existing capabilities into an action you can name and explain. Decide what it should leave unchanged.
-
-The supplied controls already read input values and listen for clicks. You can use them before studying event wiring. Calling an action twice, replacing a setting, and returning information are different behaviors; try examples that distinguish them.
 
 ## Optional AI-guided exploration
 
@@ -102,7 +265,7 @@ A starting prompt:
 
 Jin Kuwata proposes this teaching approach; the student chooses whether to use it. No extra submissions, grading, or activity tracking are added by these files.
 
-## Check a change
+## Testing your changes
 
 Try an ordinary case, a boundary case, and something that should remain unchanged. For example: preview must not add birds; setting wind must not change population; `getBirdCount()` must not mutate state.
 
