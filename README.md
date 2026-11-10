@@ -225,6 +225,14 @@ Another path follows the sound lesson:
 
 The supplied controls already handle input and clicks. You can use them before studying event listeners. No arrays or objects are needed in these student examples; those structures remain inside the supplied simulation.
 
+## After the four moments: explore the API
+
+Pick one capability from the [API reference](#api-reference) that interests you. You can ask Codex:
+
+> I've finished 04. Help me explore the README's mini API and choose something to try in my copy. Explain what an API entry tells me, then help me understand and use one function. Continue with the kind of help we agreed on.
+
+Choose an effect you want, work out the inputs, try a small call or code change, and compare what happens with what you expected. You might then combine two capabilities into an action of your own. In guided exploration, Codex should help you participate in those decisions before and during implementation, rather than simply deliver a finished feature. You can still ask for a demonstration or direct help at any time.
+
 ## Project files
 
 | File | What it is for |

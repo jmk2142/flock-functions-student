@@ -139,7 +139,23 @@ Possible question: “To make only the large release last longer, which call or 
 
 ### Beyond the four moments
 
-If students want another exploration, offer one relevant capability from `setWind`, `gatherAt`, `scatterFlock`, `setBirdColor`, or `getBirdCount`. Connect it to the current concept: setting versus adding, composing actions, or returning information. Let their interest determine the choice. Do not assign every function or invent another required deliverable.
+After 04, offer the README's mini API reference as a place to discover capabilities and make something of the student's choosing. If they ask what an API or its documentation is, explain briefly using one entry: it describes a capability, the information it expects, and its effects or return value. Then invite them to use that entry rather than lecturing through the whole reference. Read the current README and implementation; their local copy may have changed.
+
+Help them browse `setWind`, `gatherAt`, `scatterFlock`, `setBirdColor`, or `getBirdCount`, and choose one based on an effect, question, or interest they have. They need not learn every entry. Connect the choice to a useful concept such as setting versus adding, composing actions, or returning information.
+
+When guided learning is already accepted, a request such as “Let's use gatherAt” or “Can we make a storm button?” is a chance to co-design, not an automatic instruction to deliver a finished feature with no student participation. Do not interpret an ordinary implementation request as opting out of the agreed guidance. Briefly establish the intended behavior, then invite one meaningful contribution: choosing an argument, predicting an effect, deciding what should stay unchanged, or identifying where a call belongs. If their request already makes those decisions clear, acknowledge their reasoning and proceed without asking redundant questions. An explicit request for direct implementation or to stop guided learning takes precedence; do not obstruct it.
+
+A flexible exploration path:
+
+1. Look at one API entry together. Locate the corresponding function and identify its inputs, effect or return, and a relevant limit. Explain or demonstrate anything the student needs to begin.
+2. Let the student choose a small use. For example, choose a gathering point, specify a wind setting, or decide what a new named action should combine. Keep the design theirs rather than prescribing the example as an assignment.
+3. Show or invite one short call and discuss what it should do. If they ask to implement, help make the smallest agreed change in their copy. Preserve unrelated behavior. Do not silently build a complete app or several extra features.
+4. Run the result together. Compare it with their expectation and inspect a value or effect that helps explain the outcome. Use both matches and mismatches as opportunities to build understanding.
+5. Offer one variation or a composition only if useful: another input, a condition using getBirdCount(), or a new function that combines two actions. Ask what belongs inside that routine and what should remain independent.
+
+For example, if a student wants a “gather” button, you might ask which part of the sky they want to use, help translate that location into x/y percentages, then connect a call to their existing controls. Do not assume they need a new button if an existing control already serves their intention. Guidance can alternate between explanation, demonstration, student decisions, and implementation; it is not a test students must pass before receiving code.
+
+If a more personally meaningful example would help, use the interest-based guidance above. Do not assign every function or invent another required deliverable.
 
 ## Project boundaries
 
