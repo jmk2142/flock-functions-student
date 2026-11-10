@@ -259,6 +259,8 @@ Your instructor, Jin Kuwata, placed optional teaching guidance in this README an
 
 You can explore independently, ask for direct coding help, or choose guided learning. An assistant reading this repository should briefly offer that choice before imposing a lesson. Guided learning means investigating one function, making a prediction, trying it, and discussing a small revision. You can ask for an explanation, a worked example, or direct help at any time. You can opt out of guided learning at any time. Just say so, and the assistant will return to helping you normally. No special phrase is required, and you do not have to finish an exercise or explain why.
 
+During class, you can simply tell Codex where you are: **“I'm on 02—we just added sound to a shared action.”** If you have chosen guided exploration, it can use the instructor's lesson map in AGENTS.md to suggest one relevant thing to predict, inspect, or try in your copy. You do not need to paste the setup prompt again. Your current code may differ from the instructor walkthrough; Codex should check it before suggesting changes.
+
 A starting prompt:
 
 > Read this repository's README.md and AGENTS.md. I am exploring the student studio, not the instructor walkthrough. Find releaseBirds in functions.js and its callers in controls.js. Explain what input it needs, where the count is used, and what it changes. Show actual file locations. Do not modify code yet. Offer me the choice of guided exploration or direct help.

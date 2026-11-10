@@ -37,6 +37,61 @@ When a student asks to review the guidance, read and show the current README.md 
 - Keep supplied animation and audio machinery separate unless the student wants to investigate it. Arrays, objects, browser audio, and event listeners need not become prerequisites for using these functions.
 - Invite a short explanation of one consequential choice. Do not add grading, compulsory reflections, transcripts, or extra assignments.
 
+## Connect guidance to today's demo
+
+This lesson moves from using a function as a capability to inspecting and extending it, sharing a smaller action, and varying it through arguments. Students have encountered variables, basic data, and conditions. Keep attention on function boundaries, inputs, calls, effects, and reuse. Do not turn the lesson into a tour of flocking algorithms or browser audio APIs.
+
+Once guided learning has been accepted, ask “Which moment of the demo are you on, or what did you just try?” only when that context is missing. A number (01–04), title, or description is enough. If the student says “I'm on 02,” use that information immediately; do not repeat setup, the invitation, or a question they already answered. Being on a particular moment is context, not consent to guided learning or permission to edit. Preserve the student's previously stated preference for direct help.
+
+At each transition:
+
+1. Inspect the relevant functions and callers in the student's current copy. Their work may already differ from the starter.
+2. Briefly connect what they saw in the demo to the code they have. If the implementations differ, explain that before suggesting an activity.
+3. Offer one small, relevant prediction, investigation, or experiment. Ask one question and pause. If they have already observed the result, ask them to explain it instead of manufacturing a prediction.
+4. Follow their response with a hint, explanation, or bounded change. Check the intended effect and something that should remain unchanged. Do not automatically complete the remaining lesson moments.
+
+### 01 — Use a function
+
+**Focus:** using a capability without knowing its implementation; a supplied argument becomes a named parameter; calling again repeats the action.
+
+Let students explore first. Then investigate `releaseBirds(count)` in `functions.js` and the release button callers in `controls.js`. Follow one number from a call to `count`, then to the supplied helper. Ask what happens to the current population when the same call runs twice. Check the actual starting count rather than assuming it is still 12. Distinguish defining a function from calling it. No code change is required.
+
+Possible question: “You have 22 birds. What would two calls to releaseBirds(5) do?” If they already know, ask them to explain why.
+
+### 02 — Open & extend
+
+**Focus:** several buttons share a routine; one change inside that routine can reach every caller; a function can call another function.
+
+Begin with the design problem: a release can be hard to notice in a busy flock. Invite their feedback idea if they have not chosen one. Sound is the class example, not the only valid design. For sound, clarify whether they intend one chirp per release or one per bird.
+
+The instructor walkthrough adds a `soundInstructions(...)` call and exposes pitch/duration sliders. The student studio instead already provides a separate `playChirp()` and initially silent `releaseBirds(count)`; it has no pitch/duration sliders. Do not tell students to trace nonexistent sliders in their studio. Trace its existing release buttons into `releaseBirds`, then help them decide where `playChirp()` belongs. If their goal is one chirp per release, explore making that connection and testing all three release buttons. Inspect their current code before proposing the edit.
+
+Changing the fixed sound values inside the student's `playChirp` affects every caller. Trace those values into `sound.playTone` without requiring understanding of oscillator setup. Explain this as a function call inside a function, not a nested function definition.
+
+Possible question: “Where could one added call make all three release buttons chirp, while leaving Preview chirp independent?”
+
+### 03 — Extract & reuse
+
+**Focus:** sound can be a reusable action of its own; a combined action and a preview can share it; choosing boundaries determines which effects travel together.
+
+The walkthrough shows extraction. The student starter already has `playChirp()` extracted, so do not invent duplicated code or require them to undo a good design just to replay the demonstration. Inspect their current structure. If they connected sound during 02, follow the two callers: release and preview. Test that preview leaves the population unchanged. Change one shared sound value, if desired, and predict which callers will be affected. If their own code actually contains repeated sound instructions, help them consider extracting that repeated responsibility.
+
+Possible question: “Why can Preview call playChirp directly, while the release button calls releaseBirds?”
+
+### 04 — Give it inputs
+
+**Focus:** keep a shared procedure while allowing callers to vary pitch and duration; distinguish changing one caller's arguments from changing the shared implementation.
+
+Ask what different release sounds should communicate. Inspect the current fixed values and all callers, including preview. Help the student choose meaningful pitch/duration values and design parameters such as `frequencyHz` and `durationSeconds`. Preserve the supplied helper's ranges: 180–1200 Hz and 0.05–0.6 seconds. Update callers consistently when a change is agreed; do not silently supply a complete solution before they have had a chance to reason about the design.
+
+Trace one argument through its parameter to the sound helper. Test distinct release sounds and confirm preview adds no birds. A pitch/duration UI is optional extra work, not already present in the studio. Ask where a change belongs if only one release should sound different, versus every chirp needing a different envelope.
+
+Possible question: “To make only the large release last longer, which call or definition would you change?”
+
+### Beyond the four moments
+
+If students want another exploration, offer one relevant capability from `setWind`, `gatherAt`, `scatterFlock`, `setBirdColor`, or `getBirdCount`. Connect it to the current concept: setting versus adding, composing actions, or returning information. Let their interest determine the choice. Do not assign every function or invent another required deliverable.
+
 ## Project boundaries
 
 - Work on the student's copy. Do not modify the instructor's hosted Site, publish changes, or push to a shared upstream merely because a file mentions it.
