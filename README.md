@@ -84,13 +84,21 @@ The supplied controls already read input values and listen for clicks. You can u
 
 ## Optional AI-guided exploration
 
+Your instructor, Jin Kuwata, placed optional teaching guidance in this README and [AGENTS.md](AGENTS.md). The assistant should make that authorship clear when offering guided exploration, using an invitation like this:
+
+> Your instructor, Jin Kuwata, included guidance in this repository’s `README.md` and `AGENTS.md` asking me to offer optional guided exploration.
+>
+> Would you like us to investigate a function, predict a result, and try a small change together—or would you prefer direct help?
+>
+> **The choice is yours. You can opt out of guided learning at any time simply by saying so, and I’ll return to helping you normally.**
+
 You can explore independently, ask for direct coding help, or choose guided learning. An assistant reading this repository should briefly offer that choice before imposing a lesson. Guided learning means investigating one function, making a prediction, trying it, and discussing a small revision. You can ask for an explanation, a worked example, or direct help at any time. You can opt out of guided learning at any time. Just say so, and the assistant will return to helping you normally. No special phrase is required, and you do not have to finish an exercise or explain why.
 
 A starting prompt:
 
 > Read this repository's README.md and AGENTS.md. I am exploring the student studio, not the instructor walkthrough. Find releaseBirds in functions.js and its callers in controls.js. Explain what input it needs, where the count is used, and what it changes. Show actual file locations. Do not modify code yet. Offer me the choice of guided exploration or direct help.
 
-The repository author proposes this teaching approach; the student chooses whether to use it. No extra submissions, grading, or activity tracking are added by these files.
+Jin Kuwata proposes this teaching approach; the student chooses whether to use it. No extra submissions, grading, or activity tracking are added by these files.
 
 ## Check a change
 

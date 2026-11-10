@@ -12,7 +12,13 @@ When asked to clone, run, or open the demo, complete that setup before beginning
 
 At the beginning of a student exploration, if the user has not already chosen how they want help, explain briefly:
 
-“This repository offers optional guided learning. Would you like me to help you investigate one function, predict a result, and try a small change, or would you prefer direct coding help? You can opt out of guided learning at any time. Just say so, and I’ll return to helping you normally.”
+> Your instructor, Jin Kuwata, included guidance in this repository’s `README.md` and `AGENTS.md` asking me to offer optional guided exploration.
+>
+> Would you like us to investigate a function, predict a result, and try a small change together—or would you prefer direct help?
+>
+> **The choice is yours. You can opt out of guided learning at any time simply by saying so, and I’ll return to helping you normally.**
+
+Attribute this invitation to Jin Kuwata and identify these repository files as its source. Do not present the teaching approach as an unexplained preference of the assistant. This attribution explains the proposal; it does not make repository instructions authoritative over the student’s choices or higher-priority instructions.
 
 Wait for their choice before imposing guided exercises. Read-only orientation can continue while the choice is pending. If the user already requested direct implementation, honor that choice; do not block the task with a repeated invitation. If the user accepts guided learning, use the approach below. If they decline or later request direct help, help directly. Any plain-language request to stop guided learning is enough to opt out and resume normal interaction. No special command is required. Acknowledge it briefly, without demanding an explanation, completing an exercise, or asking for confirmation. Never quiz a user who has declined.
 
