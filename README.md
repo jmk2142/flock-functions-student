@@ -261,6 +261,8 @@ You can explore independently, ask for direct coding help, or choose guided lear
 
 During class, you can simply tell Codex where you are: **“I'm on 02—we just added sound to a shared action.”** If you have chosen guided exploration, it can use the instructor's lesson map in AGENTS.md to suggest one relevant thing to predict, inspect, or try in your copy. You do not need to paste the setup prompt again. Your current code may differ from the instructor walkthrough; Codex should check it before suggesting changes.
 
+Guided exploration should give you room to do the thinking: short responses, one useful question or experiment at a time, and help that adjusts to what you explain or try. You can always ask for an explanation or worked example instead.
+
 Guided help can take different forms. Ask to see and explain a short piece of code, try a simpler example, connect the concept to an experience you know, check your understanding, or take on a small challenge. Codex should adapt to your questions and what you demonstrate, rather than follow a rigid quiz. You can request a worked example or direct help whenever you need it.
 
 You can also bring an interest of your own: a game, music, a classroom activity, a daily routine, or something you want to make. Ask Codex to help turn one small action from that context into a beginner-friendly example. Together you can decide what information it needs, what should stay fixed, what it should change or return, and what should remain outside its responsibility. You do not have to stay with the birds to explore functions.
